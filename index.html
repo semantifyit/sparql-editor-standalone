@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sparql Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clean responsive bootstrap website template">
+  <meta name="author" content="">
+  <!-- styles -->
+  <link href="frontend/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="frontend/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="frontend/assets/css/font-awesome.css" rel="stylesheet">
+  <link href="frontend/assets/css/docs.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700" rel="stylesheet">
+  <link href="frontend/assets/css/style.css" rel="stylesheet">
+  <link href="frontend/assets/color/default.css" rel="stylesheet">
+  <link href='https://cdn.jsdelivr.net/npm/yasgui-yasqe@2.11.22/dist/yasqe.min.css' rel='stylesheet' type='text/css' />
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/yasr/2.12.19/yasr.min.css' rel='stylesheet' type='text/css' />
+  <!-- fav and touch icons -->
+  <link rel="shortcut icon" href="frontend/assets/ico/favicon.ico">
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="frontend/assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="frontend/assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="frontend/assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="frontend/assets/ico/apple-touch-icon-57-precomposed.png"> -->
+</head>
+
+<body>
+  <header>
+    <!-- Navbar
+    ================================================== -->
+    <div class="cbp-af-header">
+      <div class=" cbp-af-inner">
+        <div class="container">
+          <div class="row">
+            <div class="12">
+              <!-- logo -->
+              <div class="logo">
+                <h1><a href="index.html">Sparql Editor</a></h1>
+                <!-- <img src="frontend/assets/img/logo.png" alt="" /> -->
+              </div>
+              <!-- end logo -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="intro">
+
+  </section>
+  <section id="maincontent">
+    <div class="container">
+      <!-- Statement counter -->
+      <div class="row">
+        <div class="span12">
+          <div class="cta-box">
+            <div class="cta-text query_counter">
+              <h2>Statements Counter <br> <span id="total_request_counter">0</span></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Query example selection-->
+      <div class="row">
+        <div class="span12">
+          <h2>Try (Example)</h2>
+          <select class="query_selector" id="query_selector">
+            <option selected disabled hidden>Query Examples</option>
+            <option value="hotel">Hotels</option>
+            <option value="event">Events</option>
+            <option value="restaurants">Restaurants</option>
+            <option value="tvi">The Villages in the Mayrhofen Region</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- <button id="run"> Run</button> -->
+      <div class="row">
+        <div class="span12">
+<!--           <span class="graphuri">GraphUri:</span> <input type="text" name="uri" id="apiUrl"/> -->
+          <div class="uriSelection">
+            <label class="graphuri">GraphUri:</label>
+            <select id="apiUrl">
+              <option disabled selected>Select GraphUri:</option>
+              <option value="sti">https://graphdb.sti2.at/repositories/TirolGraph-Beta</option>
+              <option value="wikidata">https://query.wikidata.org/bigdata/namespace/wdq/sparql</option>
+              <option value="dbpedia">https://dbpedia.org/sparql</option>
+            </select>
+          </div>
+          <div id="request_error" class='error' style="color:red;">
+          </div>
+          <!-- Editor box -->
+          <div id="yasgui"></div>
+          <!-- <textarea class="span12" id="te" style="height:200px;border:1px solid black;">Query Here</textarea> -->
+          <!-- end tagline -->
+        </div>
+      </div>
+
+      <div class="row">
+        Results
+        <div id="yasr">
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Footer
+ ================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="span4">
+          <div class="widget">
+            <div class="footerlogo">
+              <h2>About Sparql Editor </h2>
+            </div>
+            <p class="sparql_text">
+              The Standalone Sparql Editor.
+              <ul class="social-network">
+                <li><a href=""><i class=" icon-map-marker icon-circled icon-1x"></i></a>
+                  Techniker Straße 21a <br>
+                  6020 Innsbruck,
+                  Austria
+                </li>
+                <br>
+                <li><a href="tel:+4351250753738"><i class=" icon-phone icon-circled icon-1x"></i> +43 512 507 53738</a>
+                </li>
+              </ul>
+          </div>
+        </div>
+        <div class="span4">
+          <div class="widget">
+            <div class="footerlogo">
+              <h2>GET CONNECTED</h2>
+            </div>
+            <div>
+              Follow us on social media to stay up to date!
+            </div>
+            <br>
+            <ul class="social-network">
+              <li><a href="https://twitter.com/semantifyit" title="Twitter"><i
+                    class="icon-bg-light icon-twitter icon-circled icon-1x"></i></a></li>
+              <li><a href="mailto:info@semantify.it" title="Email"><i
+                    class="icon-bg-light icon-envelope icon-circled icon-1x"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <!--        <div class="span4">
+          <div class="widget">
+            <div class="footerlogo">
+              <h2>VOICES</h2>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div class="subfooter">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <p>
+              &copy; Sparql Editor - All right reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="frontend/assets/js/jquery.js"></script>
+  <script src="frontend/assets/js/bootstrap.js"></script>
+  <script src="frontend/assets/js/classie.js"></script>
+  <script src="frontend/assets/js/cbpAnimatedHeader.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/yasr/2.12.19/yasr.bundled.min.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/yasgui-yasqe@2.11.22/dist/yasqe.bundled.min.js'></script>
+  <script src='frontend/assets/js/scripts.js'></script>
+</body>
+
+</html>

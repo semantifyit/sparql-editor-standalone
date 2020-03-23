@@ -1,0 +1,4 @@
+node_modules/
+*.log
+readme.txt
+env.example
