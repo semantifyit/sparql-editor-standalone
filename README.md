@@ -1,7 +1,7 @@
 Sparql Editor Standalone
 =========================
-0. Github Host Link: https://shakeel26.github.io/sparql-editor-standalone/
-1. git clone https://github.com/shakeel26/sparql-editor-standalone.git
+0. Github Host Link: https://semantifyit.github.io/sparql-editor-standalone/
+1. git clone https://github.com/semantifyit/sparql-editor-standalone.git
 2. cd sparql-editor-standalone
 3. cd backend
 4. npm install 
